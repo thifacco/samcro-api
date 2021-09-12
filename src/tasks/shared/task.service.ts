@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
+import { TasksModule } from '../tasks.module';
 import { Task } from './task';
 
 @Injectable()
@@ -24,7 +25,8 @@ export class TaskService {
   }
 
   getById(id: number) {
-     
+    const task = this.tasks.find(task => task.id == id);
+    return task;  
   }
 
   create(task: Task) {
