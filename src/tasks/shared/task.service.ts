@@ -6,13 +6,6 @@ import { Task } from './task';
 @Injectable()
 export class TaskService {
 
-   // continuar em: https://youtu.be/wuK1MvSpcAc?t=224
-
-   // Criei uma API RESTful com NodeJs / Express / MongoDB para reproduzir o banco de dados dos personagens do seriado Sons Of Anarchy
-
-   // Topics
-   // nodejs express mongodb restful-api sonsofanarchyangels samcro
-
   tasks: Task[] = [
     { id: 1, description: 'Tarefa 1', completed: true },
     { id: 2, description: 'Tarefa 2', completed: true },
