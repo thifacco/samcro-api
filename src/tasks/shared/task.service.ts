@@ -20,7 +20,7 @@ export class TaskService {
   ];
 
   getAll() {
-
+    return this.tasks;
   }
 
   getById(id: number) {
