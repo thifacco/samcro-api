@@ -9,22 +9,25 @@ export const PersonSchema = new mongoose.Schema({
    lastName: String,
    nickName: String,
    image: String,
-   birthDate: Date,
-   deathDate: Date,
-   parents: [{
-      person: Person,
-      parentType: String,
-   }],
+   birthYear: String,
+   deathYear: String,
+   // familyTree: [{
+   //    person: Person,
+   //    relationship: String,
+   // }],
    bio: String,
-   affiliations: [{
-      crew: Crew,
-      ride: Boolean,
-      vote: Boolean,
-      badges: [String]
-   }],
+   // affiliations: [{
+   //    crew: Crew,
+   //    ride: Boolean,
+   //    vote: Boolean,
+   //    titles: [String]
+   // }],
+   ocuppations: [String],
    motorcycles: [String],
-   murders: [{
-      person: Person,
-      reason: String
-   }]
+   // murders: [{
+   //    person: Person,
+   //    reason: String
+   // }],
+   favoriteGuns: [String],
+   portrayed: String
 })

@@ -3,7 +3,7 @@ import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { Person } from './shared/person';
 import { PersonService } from './shared/person.service';
 
-@Controller('person')
+@Controller('persons')
 export class PersonController {
 
    constructor(

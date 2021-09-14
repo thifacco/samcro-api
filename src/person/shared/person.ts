@@ -8,22 +8,25 @@ export class Person extends Document {
    lastName: string;
    nickName: string;
    image: string;
-   birthDate: Date;
-   deathDate: Date;
-   parents: [{
-      person: Person,
-      parentType: string;
-   }];
+   birthYear: String;
+   deathYear: String;
+   // familyTree: [{
+   //    person: Person,
+   //    relationship: string;
+   // }];
    bio: string;
-   affiliations: [{
-      crew: Crew,
-      ride: boolean,
-      vote: boolean,
-      badges: string[]
-   }];
+   // affiliations: [{
+   //    crew: Crew,
+   //    ride: boolean,
+   //    vote: boolean,
+   //    titles: string[]
+   // }];
+   ocuppations: string[];
    motorcycles: string[];
-   murders: [
-      person: Person,
-      reason: string
-   ]
+   // murders: [{
+   //    person: Person,
+   //    reason: string
+   // }];
+   favoriteGuns: string[];
+   portrayed: string;
 }

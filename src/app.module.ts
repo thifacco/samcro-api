@@ -3,11 +3,13 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { PersonModule } from './person/person.module';
 import { TasksModule } from './tasks/tasks.module';
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://localhost:27017/samcroapi'),
-    TasksModule
+    TasksModule,
+    PersonModule
   ],
   controllers: [AppController],
   providers: [AppService],
