@@ -7,9 +7,11 @@ export class Person extends Document {
    middleName: string;
    lastName: string;
    nickName: string;
+   gender: string;
    image: string;
-   birthYear: String;
-   deathYear: String;
+   birthYear: string;
+   deathYear: string;
+   causeOfDeath: string;
    // familyTree: [{
    //    person: Person,
    //    relationship: string;

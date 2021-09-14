@@ -8,9 +8,11 @@ export const PersonSchema = new mongoose.Schema({
    middleName: String,
    lastName: String,
    nickName: String,
+   gender: String,
    image: String,
    birthYear: String,
    deathYear: String,
+   causeOfDeath: String,
    // familyTree: [{
    //    person: Person,
    //    relationship: String,
