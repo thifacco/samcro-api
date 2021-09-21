@@ -1,8 +1,5 @@
 /* eslint-disable prettier/prettier */
 import { Document } from 'mongoose';
-import * as mongoose from 'mongoose';
-import { Crew } from 'src/crew/shared/crew';
-import { type } from 'os';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 export type PersonDocument = Person & Document & any;
