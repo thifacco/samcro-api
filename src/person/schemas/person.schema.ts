@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Document } from 'mongoose';
+import * as mongoose from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 export type PersonDocument = Person & Document & any;
@@ -34,32 +35,35 @@ export class Person extends Document {
 
    @Prop()
    causeOfDeath: String;
-   
-   // familyTree: [{
-   //    person: Person,
-   //    relationship: String,
-   // }],
+
+   @Prop({ required: false, type: mongoose.Schema.Types.Mixed })
+   relationships?: [{
+      _personId: String,
+      relationship: String,
+   }];
 
    @Prop()
    bio: String;
 
-   // affiliations: [{
-   //    crew: Crew,
-   //    ride: Boolean,
-   //    vote: Boolean,
-   //    titles: [String]
-   // }],
-   
+   @Prop({ required: false, type: mongoose.Schema.Types.Mixed })
+   affiliations?: [{
+      _crewId: String,
+      ride: Boolean,
+      vote: Boolean,
+      titles: [String]
+   }];
+
    @Prop()
    ocuppations: [String];
 
    @Prop()
    motorcycles: [String];
 
-   // murders: [{
-   //    person: Person,
-   //    reason: String
-   // }],
+   @Prop({ required: false, type: mongoose.Schema.Types.Mixed })
+   murders?: [{
+      _personId: String,
+      reason: String
+   }];
 
    @Prop()
    favoriteGuns: [String];

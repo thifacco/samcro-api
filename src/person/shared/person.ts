@@ -1,6 +1,4 @@
 /* eslint-disable prettier/prettier */
-import { Crew } from "src/crew/shared/crew";
-
 export class Person {
    firstName: string;
    middleName: string;
@@ -11,23 +9,23 @@ export class Person {
    birthYear: string;
    deathYear: string;
    causeOfDeath: string;
-   // familyTree: [{
-   //    person: Person,
-   //    relationship: string;
-   // }];
+   relationships?: [{
+      _personId: String,
+      relationship: string;
+   }];
    bio: string;
-   // affiliations: [{
-   //    crew: Crew,
-   //    ride: boolean,
-   //    vote: boolean,
-   //    titles: string[]
-   // }];
+   affiliations?: [{
+      _crewId: String,
+      ride: boolean,
+      vote: boolean,
+      titles: string[]
+   }];
    ocuppations: string[];
    motorcycles: string[];
-   // murders: [{
-   //    person: Person,
-   //    reason: string
-   // }];
+   murders?: [{
+      _personId: String,
+      reason: string
+   }];
    favoriteGuns: string[];
    portrayed: string;
 }
