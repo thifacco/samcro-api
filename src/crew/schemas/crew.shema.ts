@@ -1,6 +1,14 @@
 /* eslint-disable prettier/prettier */
-import * as mongoose from 'mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
-export const CrewSchema = new mongoose.Schema({
-   name: String
-})
+export type CrewDocument = Crew & Document & any;
+
+@Schema({ collection: 'crews' })
+export class Crew {
+   _id: String;
+   
+   @Prop({ required: true })
+   name: String;
+}
+
+export const CrewSchema = SchemaFactory.createForClass(Crew);
