@@ -1,8 +1,7 @@
 /* eslint-disable prettier/prettier */
-import { Document } from "mongoose";
 import { Crew } from "src/crew/shared/crew";
 
-export class Person extends Document {
+export class Person {
    firstName: string;
    middleName: string;
    lastName: string;

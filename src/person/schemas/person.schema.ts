@@ -1,35 +1,75 @@
 /* eslint-disable prettier/prettier */
+import { Document } from 'mongoose';
 import * as mongoose from 'mongoose';
 import { Crew } from 'src/crew/shared/crew';
-import { Person } from '../shared/person';
+import { type } from 'os';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
-export const PersonSchema = new mongoose.Schema({
-   firstName: String,
-   middleName: String,
-   lastName: String,
-   nickName: String,
-   gender: String,
-   image: String,
-   birthYear: String,
-   deathYear: String,
-   causeOfDeath: String,
+export type PersonDocument = Person & Document & any;
+
+@Schema({ collection: 'persons' })
+export class Person extends Document {
+   _id: String;
+
+   @Prop({ required: true })
+   firstName: String;
+
+   @Prop()
+   middleName: String;
+
+   @Prop()
+   lastName: String;
+
+   @Prop()
+   nickName: String;
+
+   @Prop()
+   gender: String;
+
+   @Prop()
+   image: String;
+
+   @Prop()
+   birthYear: String;
+
+   @Prop()
+   deathYear: String;
+
+   @Prop()
+   causeOfDeath: String;
+   
    // familyTree: [{
    //    person: Person,
    //    relationship: String,
    // }],
-   bio: String,
+
+   @Prop()
+   bio: String;
+
    // affiliations: [{
    //    crew: Crew,
    //    ride: Boolean,
    //    vote: Boolean,
    //    titles: [String]
    // }],
-   ocuppations: [String],
-   motorcycles: [String],
+   
+   @Prop()
+   ocuppations: [String];
+
+   @Prop()
+   motorcycles: [String];
+
    // murders: [{
    //    person: Person,
    //    reason: String
    // }],
-   favoriteGuns: [String],
+
+   @Prop()
+   favoriteGuns: [String];
+
+   @Prop()
    portrayed: String
-})
+
+}
+
+export const PersonSchema = SchemaFactory.createForClass(Person);
